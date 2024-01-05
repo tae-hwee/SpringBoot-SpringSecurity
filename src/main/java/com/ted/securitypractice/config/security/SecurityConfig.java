@@ -44,8 +44,8 @@ public class SecurityConfig {
 				.requestMatchers("/api/v1/authenticate").permitAll() // 로그인 api는 인증 없이 접근 가능
 				.requestMatchers("/api/v1/signup").permitAll() // 회원가입 api는 인증 없이 접근 가능
 				.requestMatchers("/favicon.ico").permitAll()
-				//.anyRequest().authenticated() // 나머지 요청은 인증 필요함 (but, 일단 임시로 주석 처리)
-				.anyRequest().permitAll()       // 추후 이걸 주석 처리 하고, 윗 statement를 주석 해제
+				.anyRequest().authenticated() // 나머지 요청은 인증 필요함 (but, 일단 임시로 주석 처리)
+//				.anyRequest().permitAll()       // 추후 이걸 주석 처리 하고, 윗 statement를 주석 해제
 
 				.and()
 				.apply(new JwtSecurityConfig(tokenProvider)); // JwtFilter를 addFilterBefore로 등록했던 JwtSecurityConfig class 적용
