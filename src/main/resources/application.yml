@@ -1,10 +1,10 @@
 spring:
-
   jpa:
-    properties:
-      hibernate:
-        format_sql: true
-        ddl-auto: update
+    hibernate:
+      format_sql: true
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     database-platform: org.hibernate.dialect.MariaDB103Dialect
 
   datasource:
